@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
 
 	use 'neovim/nvim-lspconfig'
 
+    -- development
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
@@ -20,6 +21,7 @@ return require('packer').startup(function(use)
 		end,
 		requires = { "nvim-lua/plenary.nvim" },
 	})
+    use 'thoughtbot/vim-rspec'
 
 	-- autocompletion
 	use 'hrsh7th/cmp-nvim-lsp'

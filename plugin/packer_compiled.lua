@@ -155,6 +155,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-rspec"] = {
+    loaded = true,
+    path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-rspec",
+    url = "https://github.com/thoughtbot/vim-rspec"
   }
 }
 

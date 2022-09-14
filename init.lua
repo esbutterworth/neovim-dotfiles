@@ -2,6 +2,7 @@
 require('lsp')
 require('plugins')
 require('lualine-conf')
+require('rspec')
 -- require('nvim-cmp')
 
 -- various other settings
