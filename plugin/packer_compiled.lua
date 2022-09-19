@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/preservim/nerdtree"
   },
   ["null-ls.nvim"] = {
-    config = { "\27LJ\2\n‹\2\0\0\a\0\f\1\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0006\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\4\0049\4\5\0049\4\6\0045\6\a\0B\4\2\2>\4\1\0036\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\b\0049\4\5\0049\4\6\0045\6\t\0B\4\2\0?\4\0\0=\3\v\2B\0\2\1K\0\1\0\fsources\1\0\0\1\0\1\fcommand\23bin/rubocop_server\16diagnostics\1\0\1\fcommand\23bin/rubocop_server\twith\frubocop\15formatting\rbuiltins\nsetup\fnull-ls\frequire\5€€À™\4\0" },
+    config = { "\27LJ\2\ný\1\0\0\a\0\f\1\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0006\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\4\0049\4\5\0049\4\6\0045\6\a\0B\4\2\2>\4\1\0036\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\b\0049\4\5\0049\4\6\0045\6\t\0B\4\2\0?\4\0\0=\3\v\2B\0\2\1K\0\1\0\fsources\1\0\0\1\0\1\fcommand\16bin/rubocop\16diagnostics\1\0\1\fcommand\16bin/rubocop\twith\frubocop\15formatting\rbuiltins\nsetup\fnull-ls\frequire\5€€À™\4\0" },
     loaded = true,
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
@@ -151,6 +151,11 @@ _G.packer_plugins = {
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["vim-agriculture"] = {
+    loaded = true,
+    path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-agriculture",
+    url = "https://github.com/jesseleite/vim-agriculture"
+  },
   ["vim-gitgutter"] = {
     loaded = true,
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
@@ -166,7 +171,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\n‹\2\0\0\a\0\f\1\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0006\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\4\0049\4\5\0049\4\6\0045\6\a\0B\4\2\2>\4\1\0036\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\b\0049\4\5\0049\4\6\0045\6\t\0B\4\2\0?\4\0\0=\3\v\2B\0\2\1K\0\1\0\fsources\1\0\0\1\0\1\fcommand\23bin/rubocop_server\16diagnostics\1\0\1\fcommand\23bin/rubocop_server\twith\frubocop\15formatting\rbuiltins\nsetup\fnull-ls\frequire\5€€À™\4\0", "config", "null-ls.nvim")
+try_loadstring("\27LJ\2\ný\1\0\0\a\0\f\1\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0006\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\4\0049\4\5\0049\4\6\0045\6\a\0B\4\2\2>\4\1\0036\4\0\0'\6\1\0B\4\2\0029\4\3\0049\4\b\0049\4\5\0049\4\6\0045\6\t\0B\4\2\0?\4\0\0=\3\v\2B\0\2\1K\0\1\0\fsources\1\0\0\1\0\1\fcommand\16bin/rubocop\16diagnostics\1\0\1\fcommand\16bin/rubocop\twith\frubocop\15formatting\rbuiltins\nsetup\fnull-ls\frequire\5€€À™\4\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
 
 _G._packer.inside_compile = false
