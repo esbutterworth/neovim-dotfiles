@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 	}
 	
 	-- git related 
-	use 'airblade/vim-gitgutter'
+    use 'f-person/git-blame.nvim'
 
 	-- file browsing
 	use 'preservim/nerdtree'

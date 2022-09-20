@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -155,11 +160,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-agriculture",
     url = "https://github.com/jesseleite/vim-agriculture"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/elliot.butterworth/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-rspec"] = {
     loaded = true,

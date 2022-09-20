@@ -32,4 +32,6 @@ vim.api.nvim_set_keymap('n', '<Leader>rt', ':call RunCurrentSpecFile()<CR>', opt
 vim.api.nvim_set_keymap('n', '<Leader>rf', ':call RunNearestSpec()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>rl', ':call RunLastSpec()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>ra', ':call RunAllSpecs()<CR>', options)
-
+-- git
+vim.api.nvim_set_keymap('n', '<Leader>gg', ':GitBlameToggle<CR>', options)
+vim.g['gitblame_enabled'] = 0
