@@ -35,3 +35,10 @@ vim.api.nvim_set_keymap('n', '<Leader>ra', ':call RunAllSpecs()<CR>', options)
 -- git
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':GitBlameToggle<CR>', options)
 vim.g['gitblame_enabled'] = 0
+
+-- copy path to clipboard
+vim.api.nvim_create_user_command("Cppath", function()
+    local path = vim.fn.expand("%:p")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {}) 

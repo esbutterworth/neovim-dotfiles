@@ -1,1 +1,1 @@
-vim.cmd("let g:rspec_command='bin/rspec'")
+vim.g['rspec_command'] = 'bin/rspec'

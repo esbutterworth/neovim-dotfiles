@@ -1,7 +1,6 @@
 -- Packer config for plugins
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-
 	use 'neovim/nvim-lspconfig'
 
     -- development
@@ -15,7 +14,8 @@ return require('packer').startup(function(use)
 						command = "bin/rubocop"
 					}),
 					require("null-ls").builtins.diagnostics.rubocop.with({
-						command = "bin/rubocop"
+						command = "bin/rubocop",
+                        diagnostics_format = "[#{s}] #{m}"
 					})
 				},
 			})
@@ -25,12 +25,12 @@ return require('packer').startup(function(use)
     use 'thoughtbot/vim-rspec'
 
 	-- autocompletion
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline' 
-	use 'hrsh7th/nvim-cmp'
     use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+    use 'tpope/vim-endwise'
+    use { 
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
+    }
 	
 	-- visual plugins
 	use {
@@ -40,10 +40,12 @@ return require('packer').startup(function(use)
 	
 	-- git related 
     use 'f-person/git-blame.nvim'
+    use 'tpope/vim-fugitive'
 
 	-- file browsing
 	use 'preservim/nerdtree'
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'
+    use 'ThePrimeagen/harpoon'
 end)
