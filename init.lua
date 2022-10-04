@@ -1,9 +1,13 @@
 -- plugins  
-require('lsp')
 require('plugins')
+require('lsp')
 require('lualine-conf')
+require('null')
 -- require('rspec')
 -- require('nvim-cmp')
+
+-- other config files
+require('keybinds')
 
 -- various other settings
 vim.api.nvim_command('set number')
@@ -16,29 +20,3 @@ vim.api.nvim_command('set autoindent')
 vim.api.nvim_command('set clipboard=unnamedplus')
 vim.api.nvim_command('set ttyfast')
 
--- mappings should these be in another file or something?
-local options = { noremap = true }
-vim.api.nvim_set_keymap('n', '<Leader>nh', ':noh<CR>', options)
--- fzf
-vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>frr', ':RgRaw -truby<CR>', options) -- search only ruby files
--- nerdtree
-vim.api.nvim_set_keymap('n', '<Leader>nn', ':NERDTreeFind<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>nc', ':NERDTreeClose<CR>', options)
--- rspec
-vim.api.nvim_set_keymap('n', '<Leader>rt', ':call RunCurrentSpecFile()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>rf', ':call RunNearestSpec()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>rl', ':call RunLastSpec()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>ra', ':call RunAllSpecs()<CR>', options)
--- git
-vim.api.nvim_set_keymap('n', '<Leader>gg', ':GitBlameToggle<CR>', options)
-vim.g['gitblame_enabled'] = 0
-
--- copy path to clipboard
-vim.api.nvim_create_user_command("Cppath", function()
-    local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
-end, {}) 

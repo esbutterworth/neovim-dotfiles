@@ -3,6 +3,7 @@ local on_attach = function(client, bufnr)
 
     local bufopts = { noremap = true, buffer = bufnr }
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<Leader>cc', vim.lsp.buf.code_action, bufopts)
 end
 
 require('lspconfig')['sorbet'].setup{
