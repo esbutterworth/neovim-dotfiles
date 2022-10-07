@@ -30,4 +30,13 @@ vim.keymap.set('n', '<Leader>cp', function()
 end, {}) 
 
 -- create new file in this directory
-vim.api.nvim_set_keymap('n', '<Leader>nf', '<C-w>v:e %:p:h/', options)
+vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
+
+-- open this file's spec in a new vsplit
+function goto_spec ()
+    local current_path = vim.fn.expand("%")
+    local spec_path = current_path:gsub("app", "spec", 1):gsub(".rb", "_spec.rb")
+    vim.api.nvim_command(':vs '..spec_path)
+end
+
+vim.keymap.set('n', '<Leader>sp', function() goto_spec() end)

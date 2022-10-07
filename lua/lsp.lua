@@ -9,7 +9,7 @@ end
 require('lspconfig')['sorbet'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    cmd = {"srb", "tc", "--lsp", "--cache-dir", "sorbet"},
+    cmd = {"bin/srb", "tc", "--lsp", "--cache-dir", "sorbet"},
     diagnostics_format = "[#{s} #{m}]" -- does nothing :(
 }
 
