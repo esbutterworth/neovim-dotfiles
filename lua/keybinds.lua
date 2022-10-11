@@ -33,10 +33,4 @@ end, {})
 vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
 
 -- open this file's spec in a new vsplit
-function goto_spec ()
-    local current_path = vim.fn.expand("%")
-    local spec_path = current_path:gsub("app", "spec", 1):gsub(".rb", "_spec.rb")
-    vim.api.nvim_command(':vs '..spec_path)
-end
-
-vim.keymap.set('n', '<Leader>sp', function() goto_spec() end)
+vim.api.nvim_set_keymap('n', '<Leader>sp', ':AV<CR>', options)

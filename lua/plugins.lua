@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
 		requires = { "nvim-lua/plenary.nvim" },
 	})
     use 'thoughtbot/vim-rspec'
+    use 'tpope/vim-rails'
 
 
 	-- visual plugins
