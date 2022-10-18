@@ -1,3 +1,6 @@
+-- LEADER
+vim.g.mapleader = ' '
+
 -- plugins  
 require('plugins')
 require('lsp')

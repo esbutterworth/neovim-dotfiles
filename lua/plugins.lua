@@ -22,6 +22,13 @@ return require('packer').startup(function(use)
 	})
     use 'thoughtbot/vim-rspec'
     use 'tpope/vim-rails'
+    use {
+        'folke/trouble.nvim',
+        config = function()
+            require('trouble').setup {}
+        end
+    }
+    use 'nvim-treesitter/nvim-treesitter'
 
 
 	-- visual plugins

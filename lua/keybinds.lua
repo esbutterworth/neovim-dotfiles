@@ -2,9 +2,11 @@ local options = { noremap = true }
 vim.api.nvim_set_keymap('n', '<Leader>nh', ':noh<CR>', options)
 -- fzf
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles packs/<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>fo', ':GFiles?<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>frr', ':RgRaw -truby<CR>', options) -- search only ruby files
+vim.api.nvim_set_keymap('n', '<Leader>fh', ':History<CR>', options)
 -- nerdtree
 vim.api.nvim_set_keymap('n', '<Leader>nn', ':NERDTreeFind<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>nc', ':NERDTreeClose<CR>', options)
@@ -21,6 +23,8 @@ vim.keymap.set('n', '<Leader>ha', function() require('harpoon.mark').add_file() 
 vim.keymap.set('n', '<Leader>hh', function() require('harpoon.ui').toggle_quick_menu() end)
 vim.keymap.set('n', '<Leader>h2', function() require('harpoon.ui').nav_next() end)
 vim.keymap.set('n', '<Leader>h1', function() require('harpoon.ui').nav_prev() end)
+-- trouble
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':TroubleToggle<CR>', options)
 
 -- copy path to clipboard
 vim.keymap.set('n', '<Leader>cp', function()
@@ -34,3 +38,4 @@ vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
 
 -- open this file's spec in a new vsplit
 vim.api.nvim_set_keymap('n', '<Leader>sp', ':AV<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>sv', ':AS<CR>', options)
