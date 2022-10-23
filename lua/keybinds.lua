@@ -5,7 +5,6 @@ vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles packs/<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fo', ':GFiles?<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>frr', ':RgRaw -truby<CR>', options) -- search only ruby files
 vim.api.nvim_set_keymap('n', '<Leader>fh', ':History<CR>', options)
 -- nerdtree
 vim.api.nvim_set_keymap('n', '<Leader>nn', ':NERDTreeFind<CR>', options)
