@@ -7,7 +7,7 @@ require('lsp')
 require('lualine-conf')
 require('null')
 -- require('rspec')
--- require('nvim-cmp')
+require('nvim-cmp')
 
 -- other config files
 require('keybinds')
@@ -23,3 +23,4 @@ vim.api.nvim_command('set autoindent')
 vim.api.nvim_command('set clipboard=unnamedplus')
 vim.api.nvim_command('set ttyfast')
 
+vim.cmd [[ colorscheme dracula ]]
