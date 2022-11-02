@@ -9,6 +9,8 @@ require('null')
 -- require('rspec')
 require('nvim-cmp')
 
+require('luasnip.loaders.from_lua')
+
 -- other config files
 require('keybinds')
 
