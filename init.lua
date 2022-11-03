@@ -3,16 +3,7 @@ vim.g.mapleader = ' '
 
 -- plugins  
 require('plugins')
-require('lsp')
-require('lualine-conf')
-require('null')
--- require('rspec')
-require('nvim-cmp')
-
-require('luasnip.loaders.from_lua')
-
--- other config files
-require('keybinds')
+require('conf.keybinds')
 
 -- various other settings
 vim.api.nvim_command('set number')

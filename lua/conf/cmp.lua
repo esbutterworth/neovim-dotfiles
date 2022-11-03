@@ -44,12 +44,11 @@ cmp.setup({
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+    sources = {
         { name = 'luasnip' },
-    }, {
+        { name = 'nvim_lsp' },
         { name = 'buffer' }
-    })
+    }
 }) 
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

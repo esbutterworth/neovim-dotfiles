@@ -1,16 +1,24 @@
 -- Packer config for plugins
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use 'neovim/nvim-lspconfig'
+	use {
+        'neovim/nvim-lspconfig',
+        config = function() require('conf.lsp') end,
+    }
 
 	-- autocompletion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
+    use {
+        'L3MON4D3/LuaSnip',
+        config = function() require('conf.snips') end,
+    }
     use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-
-    use 'L3MON4D3/LuaSnip'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function() require('conf.cmp') end,
+    }
     use 'saadparwaiz1/cmp_luasnip'
 
     use 'tpope/vim-endwise'
@@ -27,6 +35,7 @@ return require('packer').startup(function(use)
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
+        config = function() require('conf.null-ls') end,
 	})
     use 'thoughtbot/vim-rspec'
     use 'tpope/vim-rails'
@@ -42,7 +51,8 @@ return require('packer').startup(function(use)
 	-- visual plugins
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function() require('conf.lualine') end
 	}
     use 'dracula/vim'
 	
