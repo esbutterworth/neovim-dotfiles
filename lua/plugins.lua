@@ -61,7 +61,10 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
 
 	-- file browsing
-	use 'preservim/nerdtree'
+    use {
+        'nvim-tree/nvim-tree.lua',
+        config = function() require('conf.nvim-tree') end
+    }
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'

@@ -6,9 +6,10 @@ vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles packs/<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fo', ':GFiles?<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fh', ':History<CR>', options)
--- nerdtree
-vim.api.nvim_set_keymap('n', '<Leader>nn', ':NERDTreeFind<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>nc', ':NERDTreeClose<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>fb', ':Buffers<CR>', options)
+-- nvim-tree
+vim.api.nvim_set_keymap('n', '<Leader>nn', ':NvimTreeFindFile<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>nt', ':NvimTreeToggle<CR>', options)
 -- rspec
 vim.api.nvim_set_keymap('n', '<Leader>rt', ':call RunCurrentSpecFile()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>rf', ':call RunNearestSpec()<CR>', options)
