@@ -10,6 +10,7 @@ vim.api.nvim_set_keymap('n', '<Leader>fb', ':Buffers<CR>', options)
 -- nvim-tree
 vim.api.nvim_set_keymap('n', '<Leader>nn', ':NvimTreeFindFile<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>nt', ':NvimTreeToggle<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>nf', ':NvimTreeFocus<CR>', options)
 -- rspec
 vim.api.nvim_set_keymap('n', '<Leader>rt', ':call RunCurrentSpecFile()<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>rf', ':call RunNearestSpec()<CR>', options)
@@ -34,7 +35,8 @@ vim.keymap.set('n', '<Leader>cp', function()
 end, {}) 
 
 -- create new file in this directory
-vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
+-- vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
+
 
 -- open this file's spec in a new vsplit
 vim.api.nvim_set_keymap('n', '<Leader>sp', ':AV<CR>', options)
