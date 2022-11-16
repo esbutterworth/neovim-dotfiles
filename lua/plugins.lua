@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 	})
     use 'thoughtbot/vim-rspec'
     use 'tpope/vim-rails'
+    use 'vim-scripts/rainbow-end'
     use {
         'folke/trouble.nvim',
         config = function()
