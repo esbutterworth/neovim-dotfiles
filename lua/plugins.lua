@@ -46,9 +46,19 @@ return require('packer').startup(function(use)
             require('trouble').setup {}
         end
     }
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'code-biscuits/nvim-biscuits'
-
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        config = function() require('nvim-treesitter').setup {
+            ensure_installed = 'maintained'
+        } end
+    }
+    use {
+        'code-biscuits/nvim-biscuits',
+        config = function() require('nvim-biscuits').setup({
+            show_on_start = true,
+            cursor_line_only = true
+        }) end
+    } 
 
 	-- visual plugins
     use 'kyazdani42/nvim-web-devicons'
