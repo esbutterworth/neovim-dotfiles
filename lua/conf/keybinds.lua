@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap('n', '<Leader>nh', ':noh<CR>', options)
 -- fzf
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles packs/<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>fo', ':GFiles?<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>fc', ':BCommits<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fh', ':History<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fb', ':Buffers<CR>', options)
