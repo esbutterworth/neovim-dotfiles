@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     use 'tpope/vim-endwise'
+    use 'alvan/vim-closetag'
     use { 
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
@@ -39,7 +40,6 @@ return require('packer').startup(function(use)
 	})
     use 'thoughtbot/vim-rspec'
     use 'tpope/vim-rails'
-    use 'vim-scripts/rainbow-end'
     use {
         'folke/trouble.nvim',
         config = function()
@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
             ensure_installed = 'maintained'
         } end
     }
+    use 'nvim-treesitter/nvim-treesitter-context'
     use {
         'code-biscuits/nvim-biscuits',
         config = function() require('nvim-biscuits').setup({
@@ -72,6 +73,17 @@ return require('packer').startup(function(use)
 	-- git related 
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-fugitive'
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'kyazdani42/nvim-web-devicons'
+        },
+        config = function ()
+            require('octo').setup()
+        end
+    }
 
 	-- file browsing
     use {
@@ -81,12 +93,4 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'
-    use { 
-        'ThePrimeagen/harpoon',
-        require('harpoon').setup({
-            global_settings = {
-                mark_branch = true
-            }
-        })
-    }
 end)
