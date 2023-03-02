@@ -19,11 +19,6 @@ vim.api.nvim_set_keymap('n', '<Leader>ra', ':call RunAllSpecs()<CR>', options)
 -- git
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':GitBlameToggle<CR>', options)
 vim.g['gitblame_enabled'] = 0
--- harpoon
-vim.keymap.set('n', '<Leader>ha', function() require('harpoon.mark').add_file() end)
-vim.keymap.set('n', '<Leader>hh', function() require('harpoon.ui').toggle_quick_menu() end)
-vim.keymap.set('n', '<Leader>h2', function() require('harpoon.ui').nav_next() end)
-vim.keymap.set('n', '<Leader>h1', function() require('harpoon.ui').nav_prev() end)
 -- trouble
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':TroubleToggle<CR>', options)
 
