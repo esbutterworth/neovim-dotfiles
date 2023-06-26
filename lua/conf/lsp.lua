@@ -9,13 +9,28 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<Leader>cc', vim.lsp.buf.code_action, bufopts)
 end
 
-require('lspconfig')['sorbet'].setup{
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        update_in_insert = false
+    }
+)
+
+require'lspconfig'.sorbet.setup{
     on_attach = on_attach,
     flags = lsp_flags,
     cmd = {"bin/srb", "tc", "--lsp", "--cache-dir", "sorbet"},
-    diagnostics_format = "[#{s} #{m}]" -- does nothing :(
 }
 
-require('lspconfig')['solargraph'].setup {
-    on_attach = on_attach
+require'lspconfig'.ruby_ls.setup{
+    cmd = { "bundle", "exec", "ruby-lsp" }
+}
+
+-- require'lspconfig'.solargraph.setup {
+--     on_attach = on_attach,
+--     flags = lsp_flags
+-- }
+
+require'lspconfig'.tsserver.setup {
+    on_attach = on_attach,
+    flags = lsp_flags
 }

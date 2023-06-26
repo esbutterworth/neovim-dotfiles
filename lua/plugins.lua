@@ -7,19 +7,31 @@ return require('packer').startup(function(use)
     }
 
 	-- autocompletion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
     use {
-        'L3MON4D3/LuaSnip',
-        config = function() require('conf.snips') end,
+        'hrsh7th/cmp-nvim-lsp',
     }
-    use 'hrsh7th/cmp-cmdline'
+    use {
+        'hrsh7th/cmp-buffer',
+    }
+    use {
+        'hrsh7th/cmp-path',
+    }
+    use {
+        'hrsh7th/cmp-cmdline',
+    }
     use {
         'hrsh7th/nvim-cmp',
         config = function() require('conf.cmp') end,
     }
-    use 'saadparwaiz1/cmp_luasnip'
+    use {
+        'L3MON4D3/LuaSnip',
+        disable = true
+        config = function() require('conf.snips') end,
+    }
+    use {
+        'saadparwaiz1/cmp_luasnip',
+        disable = true
+    }
 
     use 'tpope/vim-endwise'
     use 'alvan/vim-closetag'
@@ -31,6 +43,7 @@ return require('packer').startup(function(use)
         'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup {} end
     }
+    use 'github/copilot.vim'
 
     -- development
 	use({
@@ -38,7 +51,6 @@ return require('packer').startup(function(use)
 		requires = { "nvim-lua/plenary.nvim" },
         config = function() require('conf.null-ls') end,
 	})
-    use 'thoughtbot/vim-rspec'
     use 'tpope/vim-rails'
     use {
         'folke/trouble.nvim',
@@ -68,22 +80,12 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function() require('conf.lualine') end
 	}
-    use 'dracula/vim'
+    use { 'dracula/vim', as = 'dracula' }
+    use { "ellisonleao/gruvbox.nvim" }
 	
 	-- git related 
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-fugitive'
-    use {
-        'pwntester/octo.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim',
-            'kyazdani42/nvim-web-devicons'
-        },
-        config = function ()
-            require('octo').setup()
-        end
-    }
 
 	-- file browsing
     use {
@@ -93,4 +95,5 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'
+    use 'axkirillov/hbac.nvim'
 end)

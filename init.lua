@@ -1,5 +1,6 @@
 -- LEADER
 vim.g.mapleader = ' '
+vim.g['agriculture#rg_options'] = '-F'
 
 -- plugins  
 require('plugins')
@@ -16,4 +17,4 @@ vim.api.nvim_command('set autoindent')
 vim.api.nvim_command('set clipboard=unnamedplus')
 vim.api.nvim_command('set ttyfast')
 
-vim.cmd [[ colorscheme dracula ]]
+vim.cmd [[ colorscheme gruvbox ]]
