@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     }
     use {
         'L3MON4D3/LuaSnip',
-        disable = true
+        disable = true,
         config = function() require('conf.snips') end,
     }
     use {
