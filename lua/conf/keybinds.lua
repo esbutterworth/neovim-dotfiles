@@ -32,11 +32,10 @@ end, {})
 -- create new file in this directory
 -- vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
 
-
 -- open this file's spec in a new vsplit
 vim.api.nvim_set_keymap('n', '<Leader>sp', ':AV<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>sv', ':AS<CR>', options)
 
 -- copilot
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap('i', '<C-CR>', 'copilot#Accept("")', { expr = true })
+-- vim.g.copilot_no_tab_map = true
+-- vim.api.nvim_set_keymap('i', '<C-CR>', 'copilot#Accept("")', { expr = true })

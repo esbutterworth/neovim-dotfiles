@@ -7,30 +7,21 @@ return require('packer').startup(function(use)
     }
 
 	-- autocompletion
-    use {
-        'hrsh7th/cmp-nvim-lsp',
-    }
-    use {
-        'hrsh7th/cmp-buffer',
-    }
-    use {
-        'hrsh7th/cmp-path',
-    }
-    use {
-        'hrsh7th/cmp-cmdline',
-    }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+    use { 'hrsh7th/cmp-cmdline' }
+    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
     use {
         'hrsh7th/nvim-cmp',
         config = function() require('conf.cmp') end,
     }
     use {
         'L3MON4D3/LuaSnip',
-        disable = true
         config = function() require('conf.snips') end,
     }
     use {
         'saadparwaiz1/cmp_luasnip',
-        disable = true
     }
 
     use 'tpope/vim-endwise'
@@ -43,7 +34,22 @@ return require('packer').startup(function(use)
         'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup {} end
     }
-    use 'github/copilot.vim'
+    use { 
+        'github/copilot.vim',
+        -- trying lua version
+        disable = true
+    }
+    use { 
+        'zbirenbaum/copilot.lua',
+        config = function() require('copilot').setup({
+            suggestion = {
+                auto_trigger = true,
+                keymap = {
+                    accept = "<C-CR>"
+                }
+            }
+        }) end
+    }
 
     -- development
 	use({
@@ -81,7 +87,9 @@ return require('packer').startup(function(use)
         config = function() require('conf.lualine') end
 	}
     use { 'dracula/vim', as = 'dracula' }
-    use { "ellisonleao/gruvbox.nvim" }
+    use { 
+        "ellisonleao/gruvbox.nvim",
+    }
 	
 	-- git related 
     use 'f-person/git-blame.nvim'

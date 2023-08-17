@@ -22,7 +22,9 @@ require'lspconfig'.sorbet.setup{
 }
 
 require'lspconfig'.ruby_ls.setup{
-    cmd = { "bundle", "exec", "ruby-lsp" }
+    on_attach = on_attach,
+    flags = lsp_flags,
+    cmd = { "ruby-lsp" }
 }
 
 -- require'lspconfig'.solargraph.setup {
