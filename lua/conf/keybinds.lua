@@ -2,7 +2,7 @@ local options = { noremap = true }
 vim.api.nvim_set_keymap('n', '<Leader>nh', ':noh<CR>', options)
 -- fzf
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Files<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles packs/<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':GFiles <CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fc', ':BCommits<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fr', ':Rg<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>fh', ':History<CR>', options)
@@ -11,11 +11,6 @@ vim.api.nvim_set_keymap('n', '<Leader>fb', ':Buffers<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>nn', ':NvimTreeFindFile<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>nt', ':NvimTreeToggle<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>nf', ':NvimTreeFocus<CR>', options)
--- rspec
-vim.api.nvim_set_keymap('n', '<Leader>rt', ':call RunCurrentSpecFile()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>rf', ':call RunNearestSpec()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>rl', ':call RunLastSpec()<CR>', options)
-vim.api.nvim_set_keymap('n', '<Leader>ra', ':call RunAllSpecs()<CR>', options)
 -- git
 vim.api.nvim_set_keymap('n', '<Leader>gg', ':GitBlameToggle<CR>', options)
 vim.g['gitblame_enabled'] = 0
@@ -28,9 +23,6 @@ vim.keymap.set('n', '<Leader>cp', function()
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {}) 
-
--- create new file in this directory
--- vim.api.nvim_set_keymap('n', '<Leader>nf', ':e %:p:h/', options)
 
 -- open this file's spec in a new vsplit
 vim.api.nvim_set_keymap('n', '<Leader>sp', ':AV<CR>', options)
