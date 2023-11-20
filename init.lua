@@ -5,6 +5,7 @@ vim.g['agriculture#rg_options'] = '-F'
 -- plugins  
 require('plugins')
 require('conf.keybinds')
+require('conf.colors')
 
 -- various other settings
 vim.api.nvim_command('set number')

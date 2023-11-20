@@ -16,15 +16,9 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
         config = function() require('conf.cmp') end,
     }
-    use {
-        'L3MON4D3/LuaSnip',
-        config = function() require('conf.snips') end,
-    }
-    use {
-        'saadparwaiz1/cmp_luasnip',
-    }
 
-    use 'tpope/vim-endwise'
+    use 'RRethy/nvim-treesitter-endwise'
+    use 'tpope/vim-surround'
     use 'alvan/vim-closetag'
     use { 
         'windwp/nvim-autopairs',
@@ -33,11 +27,6 @@ return require('packer').startup(function(use)
     use {
         'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup {} end
-    }
-    use { 
-        'github/copilot.vim',
-        -- trying lua version
-        disable = true
     }
     use { 
         'zbirenbaum/copilot.lua',
@@ -66,18 +55,17 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-treesitter/nvim-treesitter',
-        config = function() require('nvim-treesitter').setup {
-            ensure_installed = 'maintained'
+        config = function() 
+            require('conf.treesitter')
+        end
+    }
+    use { 
+        'nvim-treesitter/nvim-treesitter-context',
+        config = function() require('treesitter-context').setup {
+            max_lines = 5,
+            multiline_threshold = 5
         } end
     }
-    use 'nvim-treesitter/nvim-treesitter-context'
-    use {
-        'code-biscuits/nvim-biscuits',
-        config = function() require('nvim-biscuits').setup({
-            show_on_start = true,
-            cursor_line_only = true
-        }) end
-    } 
 
 	-- visual plugins
     use 'kyazdani42/nvim-web-devicons'
@@ -86,10 +74,7 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function() require('conf.lualine') end
 	}
-    use { 'dracula/vim', as = 'dracula' }
-    use { 
-        "ellisonleao/gruvbox.nvim",
-    }
+    use 'rebelot/kanagawa.nvim'
 	
 	-- git related 
     use 'f-person/git-blame.nvim'
@@ -103,5 +88,4 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'
-    use 'axkirillov/hbac.nvim'
 end)
