@@ -15,24 +15,42 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 
-require'lspconfig'.sorbet.setup{
+-- require('lspconfig').ruby_ls.setup{
+--     on_attach = on_attach,
+--     cmd = { "ruby-lsp" }
+-- }
+
+lspconfig = require('lspconfig')
+configs = require('lspconfig.configs')
+
+if not configs.fuzzy_ls then
+  configs.fuzzy_ls = {
+    default_config = {
+      cmd = {'bin/fuzzy'};
+      filetypes = {'ruby'};
+      root_dir = function(fname)
+        return lspconfig.util.find_git_ancestor(fname)
+      end;
+      settings = {};
+      init_options = {
+        allocationType = "ram",
+        indexGems = true,
+        reportDiagnostics = true
+      };
+    };
+  }
+end
+
+require('lspconfig').fuzzy_ls.setup{
     on_attach = on_attach,
-    flags = lsp_flags,
+}
+
+require('lspconfig').sorbet.setup{
+    on_attach = on_attach,
     cmd = {"bin/srb", "tc", "--lsp", "--cache-dir", "sorbet"},
 }
 
-require'lspconfig'.ruby_ls.setup{
+require('lspconfig').tsserver.setup {
     on_attach = on_attach,
-    flags = lsp_flags,
-    cmd = { "ruby-lsp" }
 }
 
--- require'lspconfig'.solargraph.setup {
---     on_attach = on_attach,
---     flags = lsp_flags
--- }
-
-require'lspconfig'.tsserver.setup {
-    on_attach = on_attach,
-    flags = lsp_flags
-}
