@@ -15,37 +15,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 
--- require('lspconfig').ruby_ls.setup{
---     on_attach = on_attach,
---     cmd = { "ruby-lsp" }
--- }
-
-lspconfig = require('lspconfig')
-configs = require('lspconfig.configs')
-
-if not configs.fuzzy_ls then
-  configs.fuzzy_ls = {
-    default_config = {
-      cmd = {'bin/fuzzy'};
-      filetypes = {'ruby'};
-      root_dir = function(fname)
-        return lspconfig.util.find_git_ancestor(fname)
-      end;
-      settings = {};
-      init_options = {
-        allocationType = "ram",
-        indexGems = true,
-        reportDiagnostics = true
-      };
-    };
-  }
-end
-
-require('lspconfig').fuzzy_ls.setup{
-    on_attach = on_attach,
-}
-
-require('lspconfig').sorbet.setup{
+require('lspconfig').sorbet.setup {
     on_attach = on_attach,
     cmd = {"bin/srb", "tc", "--lsp", "--cache-dir", "sorbet"},
 }
@@ -54,3 +24,7 @@ require('lspconfig').tsserver.setup {
     on_attach = on_attach,
 }
 
+require('lspconfig').mdx_analyzer.setup {
+    on_attach = on_attach,
+    filetypes = { 'markdown' },
+}
