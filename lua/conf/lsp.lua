@@ -28,3 +28,8 @@ require('lspconfig').mdx_analyzer.setup {
     on_attach = on_attach,
     filetypes = { 'markdown' },
 }
+
+require('lspconfig').rubocop.setup {
+    on_attach = on_attach,
+    cmd = { "bin/rubocop", "--lsp" },
+}

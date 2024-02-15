@@ -41,11 +41,6 @@ return require('packer').startup(function(use)
     }
 
     -- development
-	use({
-		"nvimtools/none-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-        config = function() require('conf.null-ls') end,
-	})
     use 'tpope/vim-rails'
     use {
         'folke/trouble.nvim',
