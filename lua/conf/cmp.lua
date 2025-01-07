@@ -35,7 +35,6 @@ cmp.setup({
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
     }),
     sources = {
-        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'buffer' }
     }

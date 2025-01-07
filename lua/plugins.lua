@@ -28,17 +28,12 @@ return require('packer').startup(function(use)
         'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup {} end
     }
-    use { 
-        'zbirenbaum/copilot.lua',
-        config = function() require('copilot').setup({
-            suggestion = {
-                auto_trigger = true,
-                keymap = {
-                    accept = "<C-CR>"
-                }
-            }
-        }) end
-    }
+
+ 	use({
+ 		"nvimtools/none-ls.nvim",
+ 		requires = { "nvim-lua/plenary.nvim" },
+         config = function() require('conf.null-ls') end,
+ 	})
 
     -- development
     use 'tpope/vim-rails'
@@ -80,7 +75,7 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         config = function() require('conf.nvim-tree') end
     }
-	use 'junegunn/fzf'
+    use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
     use 'jesseleite/vim-agriculture'
 end)
