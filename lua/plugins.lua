@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
         config = function() require('conf.lualine') end
 	}
     use 'rebelot/kanagawa.nvim'
+    use 'loctvl842/monokai-pro.nvim'
 	
 	-- git related 
     use 'f-person/git-blame.nvim'
