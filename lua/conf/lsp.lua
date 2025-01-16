@@ -4,9 +4,24 @@ end
 
 require('lspconfig').sorbet.setup {
     on_attach = on_attach,
-    cmd = {"bin/srb", "tc", "--lsp", "--cache-dir", "sorbet"},
+    cmd = { "bin/srb", "tc", "--lsp", "--cache-dir", "sorbet" },
 }
 
 require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                disable = {
+                    "lowercase-global"
+                },
+                globals = {
+                    -- from crow
+                    "output",
+                    "input",
+                    "pulse",
+                },
+            }
+        }
+    }
 }
